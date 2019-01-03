@@ -1,0 +1,30 @@
+
+
+
+<div>
+  제목 : <input type="text" id="title"><br>
+  내용 : <input type="text" id="content"><br>
+  작성자 : <input type="text" id="writer"><br>
+  <button (click)="search()">검색</button>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>번호</th>
+      <th>제목</th>
+      <th>작성자</th>
+      <th>작성일자</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let board of boardList">
+      <td>{{board.num}}</td>
+      <td><a routerLink="/boardview/{{board.num}}">{{board.title}}</a></td>
+      <td>{{board.writer}}</td>
+      <td>{{board.wdate}}</td>
+    </tr>
+    <tr>
+      <td colspan="4"><button (click)="goPage()">게시글등록</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+<div id="loginDiv" *ngIf="!user.token">
+<h3>Login</h3>
+ID : <input type="text" name="id" [(ngModel)]="user.id"><br>
+PWD : <input type="password" name="pwd" [(ngModel)]="user.pwd"><br>
+<button (click)="doLogin()">로그인</button>
+<button (click)="alertId()">스토리지값가져오기</button>
+</div>
+
+<div id="logoutDiv" *ngIf="user.token">
+    {{user.name}}님 안녕하세요<br>
+    <button (click)="doLogout()">로그아웃</button>
+</div>
