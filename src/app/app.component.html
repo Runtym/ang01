@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
+      {{getName()}}
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,13 @@
           <a class="nav-link" [routerLink]="['boardlist']">Board</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" [routerLink]="['userlist']">User</a>
+        </li>
+        <li class="nav-item" *ngIf="!localStorageItem()">
           <a class="nav-link" [routerLink]="['login']">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="localStorageItem()">
+          <a class="nav-link" href="#" (click)="doLogout()">Logout</a>
         </li>
       </ul>
     </div>
@@ -27,5 +33,4 @@
 <br><br><br>
 <div class="container">
 <router-outlet></router-outlet>
-<router-outlet name="sec"></router-outlet>
 </div>

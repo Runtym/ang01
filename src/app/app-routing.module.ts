@@ -5,12 +5,15 @@ import { BoardwriteComponent } from './boardwrite/boardwrite.component';
 import { BoardlistComponent } from './boardlist/boardlist.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BoardviewComponent } from './boardview/boardview.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'boardwrite',component:BoardwriteComponent},
   {path:'boardlist',component:BoardlistComponent},
   {path:'boardview/:num',component:BoardviewComponent},
+  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'userlist',component:UserListComponent},
   {path:'**',component:NotFoundComponent}
 ]
 

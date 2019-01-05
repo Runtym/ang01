@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 80",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,10 +12,13 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",
+    "@angular/cdk": "^7.2.0",
     "@angular/common": "~7.1.0",
     "@angular/compiler": "~7.1.0",
     "@angular/core": "~7.1.0",
+    "@angular/flex-layout": "^7.0.0-beta.22",
     "@angular/forms": "~7.1.0",
+    "@angular/material": "^7.2.0",
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",

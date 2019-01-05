@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export interface Board {
     num?:number;
     title:string;
@@ -5,4 +7,5 @@ export interface Board {
     wdate?:string;
     writer:number;
     cnt?:number;
+    user?:User;
 }

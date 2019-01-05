@@ -1,36 +1,31 @@
 <div id="loginDiv" *ngIf="!user.token">
-    <h1 class="form-heading">login Form</h1>
+    <h1 class="form-heading">로그인</h1>
     <div class="login-form">
         <div class="main-div">
             <div class="panel">
-                <h2>Admin Login</h2>
-                <p>Please enter your email and password</p>
+                <h2>사용자 로그인</h2>
+                <p>아이디와 비밀번호를 입력해주세요</p>
             </div>
-            <form id="Login">
-
+            <div>
                 <div class="form-group">
-
-
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
-
+                    <input type="text" class="form-control" name="id1"  id="id1" placeholder="아이디"  [(ngModel)]="user.id"  >
                 </div>
 
                 <div class="form-group">
-
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-
+                    <input type="password" class="form-control"  placeholder="비밀번호"  [(ngModel)]="user.pwd">
                 </div>
                 <div class="forgot">
-                    <a href="reset.html">Forgot password?</a>
+                    <a href="reset.html">비밀번호를 잊으셨나요?</a>
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-
-            </form>
+                <button type="submit" class="btn btn-primary" (click)="doLogin()">Login</button>
+            </div>
         </div>
         <p class="botto-text"> Designed by Sunil Rajput</p>
     </div>
 </div>
-
+<div>
+    {{user|json}}
+</div>
 <div id="logoutDiv" *ngIf="user.token">
     {{user.name}}님 안녕하세요<br>
     <button (click)="doLogout()">로그아웃</button>

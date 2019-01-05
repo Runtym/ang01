@@ -9,6 +9,10 @@ import { BoardwriteComponent } from './boardwrite/boardwrite.component';
 import { BoardlistComponent } from './boardlist/boardlist.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BoardviewComponent } from './boardview/boardview.component';
+import { UserListComponent } from './user-list/user-list.component';
+
+import { UploadModule } from './upload/upload.module';
+import { CommonService } from './common/common.service';
 
 @NgModule({
   declarations: [
@@ -17,15 +21,17 @@ import { BoardviewComponent } from './boardview/boardview.component';
     BoardwriteComponent,
     BoardlistComponent,
     NotFoundComponent,
-    BoardviewComponent
+    BoardviewComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UploadModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

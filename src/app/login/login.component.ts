@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
 import { Route, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,8 +24,13 @@ export class LoginComponent implements OnInit {
           alert('로그인 되었습니다.');
           localStorage.setItem('id',data.id);
           localStorage.setItem('token',data.token);
+          localStorage.setItem('num',data.num.toString());
+          localStorage.setItem('name',data.name);
           this.route.navigate(['boardlist']);
           this.user = data;
+        }else{
+          alert('아이디 비밀번호를 확인해주세요.')
+          this.user = {id:'',pwd:''};
         }
         console.log(data);
       }

@@ -1,42 +1,31 @@
-
-
-
-<div> 
-      <!-- Search form -->
-      <div class="md-form active-pink-2 mb-3">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      </div>
-      <!-- Search form -->
-      <div class="md-form active-purple-2 mb-3">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      </div>
-      <!-- Search form -->
-      <div class="md-form active-cyan-2 mb-3">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      </div>
-  제목 : <input type="text" id="title"><br>
-  내용 : <input type="text" id="content"><br>
-  작성자 : <input type="text" id="writer"><br>
-  <button (click)="search()">검색</button>
+<div class="search">
+    제목 : <input type="test" id="title"><br>
+    작성자 : <input type="test" id="writer"><br>
+    내용 : <input type="test" id="content"><br>
+    <button (click)="search()">검색</button>
 </div>
-<table class="table table-bordered">
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
   <thead>
-    <tr>
-      <th>번호</th>
-      <th>제목</th>
-      <th>작성자</th>
-      <th>작성일자</th>
-    </tr>
+      <tr>
+          <th><input type="checkbox" [(ngModel)]="allChecked"></th>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자아아디</th>
+          <th>작성자</th>
+          <th>작성일자</th>
+      </tr>
   </thead>
   <tbody>
     <tr *ngFor="let board of boardList">
+      <td><input type="checkbox" value="{{board.num}}" name="numCheck" [checked]="allChecked"></td>
       <td>{{board.num}}</td>
       <td><a routerLink="/boardview/{{board.num}}">{{board.title}}</a></td>
       <td>{{board.writer}}</td>
+      <td>{{board.au.name}}</td>
       <td>{{board.wdate}}</td>
     </tr>
     <tr>
-      <td colspan="4"><button (click)="goPage()">게시글등록</button></td>
+      <td colspan="6"><button (click)="goPage()">글쓰기</button><button (click)="doDelete()">삭제</button></td>
     </tr>
   </tbody>
 </table>
