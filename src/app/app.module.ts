@@ -13,6 +13,7 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { UploadModule } from './upload/upload.module';
 import { CommonService } from './common/common.service';
+import { BoardUpdateComponent } from './board-update/board-update.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CommonService } from './common/common.service';
     BoardlistComponent,
     NotFoundComponent,
     BoardviewComponent,
-    UserListComponent
+    UserListComponent,
+    BoardUpdateComponent
   ],
   imports: [
     BrowserModule,

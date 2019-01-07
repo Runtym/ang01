@@ -39,10 +39,11 @@ export class BoardlistComponent implements OnInit {
 
   doDelete(){
     var checks = <NodeListOf<HTMLInputElement>>document.querySelectorAll('[name=numCheck]:checked');
+    var param = '';
     checks.forEach(obj=>{
       this.list.push(parseInt(obj.value));
     }) 
-    this.cs.delete('api/angboards',this.list).subscribe(
+    this.cs.delete('api/angboards',{nums:this.list}).subscribe(
       data=>{
         alert('삭제완료');
         this.search();

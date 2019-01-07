@@ -1,0 +1,5 @@
+<h2>게시물 작성</h2>
+제목 : <input type="text" name="title" [(ngModel)]="board.title"><br>
+내용 : <textarea name="content" [(ngModel)]="board.content"></textarea><br>
+작성자 : <input type="number" name="writer" disabled [(ngModel)]="board.writer"><br>
+<button (click)="boardUpdate()">수정하기</button>

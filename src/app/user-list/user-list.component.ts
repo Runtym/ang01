@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
 import { Router } from '@angular/router';
+import { CommonService } from '../common/common.service';
 
 @Component({
   selector: 'app-user-list',
@@ -10,15 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
   userList:User[] = [];
   allChcked:boolean = false;
   list:Number[] = [];
-  constructor(private http:HttpClient,private route:Router) { var header:HttpHeaders= new HttpHeaders({
-    'X-AUTH-ID':localStorage.getItem('id'),
-    'X-AUTH-TOKEN':localStorage.getItem('token')
-  });
-    this.http.get<User[]>('http://localhost:8080/api/users',{headers:header}).subscribe(
+  constructor(private cs:CommonService,private route:Router) {
+    cs.get('api/users',{}).subscribe(
       data=>{
         console.log(data);
         this.userList = data;

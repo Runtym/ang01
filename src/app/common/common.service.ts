@@ -28,12 +28,16 @@ export class CommonService {
   delete(url:string,param:any){
     url = this.url + url;
     var header:HttpHeaders= this.getHeader('application/json');
-    return this.http.delete(url,{body:JSON.stringify(param),headers:header});
+    return this.http.delete(url,{params:param,headers:header});
   }
   post<T>(url:string,param:any):Observable<T>{
     url = this.url + url;
     var header:HttpHeaders= this.getHeader('application/json');
-    console.log(header);
     return this.http.post<T>(url,param,{headers:header});
+  }
+  put<T>(url:string,param:any):Observable<T>{
+    url = this.url + url;
+    var header:HttpHeaders= this.getHeader('application/json');
+    return this.http.put<T>(url,param,{headers:header});
   }
 }
